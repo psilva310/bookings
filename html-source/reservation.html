@@ -122,7 +122,7 @@
                 }, false)
                 })
         })()
-
+        
         const elem = document.getElementById('reservation-dates');
         const rangepicker = new DateRangePicker(elem, {
             format: "yyyy-mm-dd",
@@ -135,7 +135,7 @@
             })
         }
 
-        document.getElementById("teste-btn").addEventListener("click", function(){
+        document.getElementById("check-availability-button").addEventListener("click", function(){
             //notify("congratulations!!!","success")
             let html = `
             <form id="check-availability" action="" method="" novalidate class="needs-validation" style="overflow: hidden;">
@@ -149,14 +149,14 @@
                                 <input disabled required class="form-control" type="text" name="start" id="end" placeholder="Departure" style="width:200px;">
                             </div>
 
-                            <img src="static/images/airplane.gif" alt="">
+                            <img src="/static/images/airplane.gif" alt="">
                         </div>
                     </div>
                 </div>
             </form>
             `
             attention.custom({msg: html, title: "Choose your dates"})
-        })      
+        })
 
         function Prompt() {
             let toast = function(c) {

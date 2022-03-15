@@ -1,0 +1,40 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+            
+        <div class="row">
+            <div class="col-md-3"></div> <!-- add three empty colons to center the form-->
+            <div class="col-md-6">
+                <h1 class="mt-5">Check for Availability</h1>
+                <form action="reservation.html" method="GET" novalidate class="needs-validation">
+                    <div class="row" id="reservation-dates">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="end_date" class="form-label">Arrival Date</label>
+                                <input required name="start_date" id="start_date" type="text" class="form-control" aria-describedby="startDateHelp" placeholder="Check Availability">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="end_date" class="form-label">Departure Date</label>
+                                <input required name="end_date" id="end_date" type="text" class="form-control" aria-describedby="endDateHelp" placeholder="Check Availability">
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{end}}
+
+{{ define "lastjs" }}
+        <script>
+            const elem = document.getElementById('reservation-dates');
+            const rangepicker = new DateRangePicker(elem, {
+                format: "yyyy-mm-dd",
+            });
+        </script>
+{{end}}
