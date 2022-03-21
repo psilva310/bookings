@@ -15,7 +15,10 @@ require (
 	render v0.0.0-00010101000000-000000000000
 )
 
-require models v0.0.0-00010101000000-000000000000 // indirect
+require (
+	forms v0.0.0-00010101000000-000000000000 // indirect
+	models v0.0.0-00010101000000-000000000000 // indirect
+)
 
 replace handlers => ./cmd/internal/handlers
 
@@ -24,3 +27,5 @@ replace render => ./cmd/internal/render
 replace config => ./cmd/internal/config
 
 replace models => ./cmd/internal/models
+
+replace forms => ./cmd/internal/forms
