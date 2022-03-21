@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"pkg/config"
-	"pkg/handlers"
-	"pkg/render"
+	"config"
+	"handlers"
+	"render"
 
 	"github.com/alexedwards/scs/v2"
 )

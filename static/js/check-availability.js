@@ -18,5 +18,27 @@ document.getElementById("check-availability-button").addEventListener("click", f
         </div>
     </form>
     `
-    attention.custom({msg: html, title: "Choose your dates"})
+    attention.custom({
+        msg: html, 
+        title: "Choose your dates",
+        callback: function(result){
+            console.log("called")
+
+            let form = document.getElementById("check-availability")
+            
+            let formData = new FormData(form)
+            formData.append("csrf_token", "{{.CSRFToken}}")
+
+            fetch('/search-availability-json', {
+                method: "post",
+                body: formData,
+            })
+                .then(response => response.json()) //convert to json
+                .then(data => { //data = json
+                    console.log(data)
+                    console.log(data.ok)
+                    console.log(data.message)
+                })
+        }
+    })
 })
